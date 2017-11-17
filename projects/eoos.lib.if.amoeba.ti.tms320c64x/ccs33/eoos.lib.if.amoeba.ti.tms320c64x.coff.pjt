@@ -1,0 +1,35 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="D:\baigudin\git\baigudin\eoos-projects\projects\eoos.lib.if.amoeba.ti.tms320c64x\ccs33\"
+ProjectType=Library
+CPUFamily=TMS320C64XX
+Tool="Archiver"
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\..\..\..\eoos-kernel-if-amoeba\source\kernel.Allocator.cpp"
+Source="..\..\..\..\eoos-kernel-if-amoeba\source\kernel.Interrupt.cpp"
+Source="..\..\..\..\eoos-kernel-if-amoeba\source\kernel.Kernel.cpp"
+Source="..\..\..\..\eoos-kernel-if-amoeba\source\kernel.Main.cpp"
+Source="..\..\..\..\eoos-kernel-if-amoeba\source\kernel.Scheduler.cpp"
+Source="..\..\..\..\eoos-system\source\system.Allocator.cpp"
+Source="..\..\..\..\eoos-system\source\system.Main.cpp"
+Source="..\..\..\..\eoos-system\source\system.System.cpp"
+
+["Archiver" Settings: "Debug"]
+Options=-r -o"%GIT_REPOS_PATH%\baigudin\eoos-binaries\libraries\eoos.if.amoeba.ti.tms320c64x.coff.debug.lib"
+
+["Archiver" Settings: "Release"]
+Options=-r -o"%GIT_REPOS_PATH%\baigudin\eoos-binaries\libraries\eoos.if.amoeba.ti.tms320c64x.coff.lib"
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\Debug" -ff"$(Proj_dir)\Debug" -i"%GIT_REPOS_PATH%/baigudin/eoos-system/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-kernel-if-amoeba/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-api/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-library/include" -i"%OS_PATH%\src\core\tms_c64xx" -i"%OS_PATH%\src\rts\source" -i"%OS_PATH%\src\mapi" -mv6400 --mem_model:data=far
+
+["Compiler" Settings: "Release"]
+Options=-o3 -fr"$(Proj_dir)\Release" -ff"$(Proj_dir)\Release" -i"%OS_PATH%\src\core\tms_c64xx" -mv6400 --mem_model:data=far
+
