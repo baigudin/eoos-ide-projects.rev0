@@ -36,16 +36,19 @@ Source="..\source\Main.cpp"
 Source="..\source\memory\memory.tms320c64xplus.coff.cmd"
 
 ["Compiler" Settings: "Debug"]
-Options=-g -fr"$(Proj_dir)\Debug" -ff"$(Proj_dir)\Debug" -i"%GIT_REPOS_PATH%/eoos-system/include" -i"%GIT_REPOS_PATH%/eoos-kernel/include" -i"%GIT_REPOS_PATH%/eoos-modules/include" -i"%GIT_REPOS_PATH%/eoos-library/include" -i"%GIT_REPOS_PATH%/eoos-api/include" -mv6400+ --mem_model:data=far
+Options=-g -fr"$(Proj_dir)\Debug" -ff"$(Proj_dir)\Debug" -i"%GIT_REPOS_PATH%/baigudin/eoos-system/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-kernel/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-modules/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-library/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-api/include" -mv6400+ --mem_model:data=far
 
 ["Compiler" Settings: "Release"]
-Options=-g -o3 -fr"$(Proj_dir)\Release" -ff"$(Proj_dir)\Release" -mv6400+ --mem_model:data=far
+Options=-g -o3 -fr"$(Proj_dir)\Release" -ff"$(Proj_dir)\Release" -i"%GIT_REPOS_PATH%/baigudin/eoos-system/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-kernel/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-modules/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-library/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-api/include" -mv6400+ --mem_model:data=far
 
 ["Linker" Settings: "Debug"]
 Options=-c -h -m".\Debug\eoos.tms320c64xplus.debug.map" -o".\Debug\eoos.tms320c64xplus.debug.out" -s -w -x
 
 ["Linker" Settings: "Release"]
 Options=-a -c -m".\Release\eoos.tms320c64xplus.map" -o".\Release\eoos.tms320c64xplus.out" -w -x
+
+["..\source\Main.cpp" Settings: "Release"]
+Options="Compiler" -{-o3}
 
 ["..\source\memory\memory.tms320c64xplus.coff.cmd" Settings: "Debug"]
 LinkOrder=1
