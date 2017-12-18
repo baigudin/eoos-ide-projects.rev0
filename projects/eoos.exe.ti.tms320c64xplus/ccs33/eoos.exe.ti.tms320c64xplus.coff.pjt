@@ -1,7 +1,7 @@
 ; Code Composer Project File, Version 2.0 (do not modify or remove this line)
 
 [Project Settings]
-ProjectDir="D:\baigudin\git\baigudin\eoos-projects\projects\eoos.exe.ti.tms320c64xplus\css33\"
+ProjectDir="D:\baigudin\git\baigudin\eoos-projects\projects\eoos.exe.ti.tms320c64xplus\ccs33\"
 ProjectType=Executable
 CPUFamily=TMS320C64XX
 Tool="Compiler"
@@ -21,6 +21,7 @@ Source="..\..\..\..\eoos-modules\source\cpu\ti\tms320c64xplus\module.Boot.cpp"
 Source="..\..\..\..\eoos-modules\source\cpu\ti\tms320c64xplus\module.Boot.ll.asm"
 Source="..\..\..\..\eoos-modules\source\cpu\ti\tms320c64xplus\module.Interrupt.cpp"
 Source="..\..\..\..\eoos-modules\source\cpu\ti\tms320c64xplus\module.Interrupt.ll.asm"
+Source="..\..\..\..\eoos-modules\source\cpu\ti\tms320c64xplus\module.InterruptController.cpp"
 Source="..\..\..\..\eoos-modules\source\cpu\ti\tms320c64xplus\module.Pll.cpp"
 Source="..\..\..\..\eoos-modules\source\cpu\ti\tms320c64xplus\module.Processor.cpp"
 Source="..\..\..\..\eoos-modules\source\cpu\ti\tms320c64xplus\module.Registers.cpp"
