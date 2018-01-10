@@ -15,8 +15,8 @@ Config="Release"
 Source="..\..\..\..\eoos-kernel\source\kernel.Allocator.cpp"
 Source="..\..\..\..\eoos-kernel\source\kernel.Kernel.cpp"
 Source="..\..\..\..\eoos-kernel\source\kernel.Main.cpp"
-Source="..\..\..\..\eoos-kernel\source\kernel.Resource.cpp"
 Source="..\..\..\..\eoos-kernel\source\kernel.Scheduler.cpp"
+Source="..\..\..\..\eoos-library\source\library.Allocator.cpp"
 Source="..\..\..\..\eoos-modules\source\cpu\ti\tms320c64xplus\module.Boot.cpp"
 Source="..\..\..\..\eoos-modules\source\cpu\ti\tms320c64xplus\module.Boot.ll.asm"
 Source="..\..\..\..\eoos-modules\source\cpu\ti\tms320c64xplus\module.Interrupt.cpp"
@@ -34,6 +34,7 @@ Source="..\source\Board.cpp"
 Source="..\source\Configuration.cpp"
 Source="..\source\libraries\rts64plus.v6.0.11.lib"
 Source="..\source\Main.cpp"
+Source="Debug\eoos.tms320c64xplus.debug.map"
 Source="..\source\memory\memory.tms320c64xplus.coff.cmd"
 
 ["Compiler" Settings: "Debug"]
@@ -50,6 +51,12 @@ Options=-a -c -m".\Release\eoos.tms320c64xplus.map" -o".\Release\eoos.tms320c64x
 
 ["..\source\Main.cpp" Settings: "Release"]
 Options="Compiler" -{-o3}
+
+["Debug\eoos.tms320c64xplus.debug.map" Settings: "Debug"]
+ExcludeFromBuild=true
+
+["Debug\eoos.tms320c64xplus.debug.map" Settings: "Release"]
+ExcludeFromBuild=true
 
 ["..\source\memory\memory.tms320c64xplus.coff.cmd" Settings: "Debug"]
 LinkOrder=1
