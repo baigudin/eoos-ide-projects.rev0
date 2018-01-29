@@ -12,7 +12,6 @@ namespace unit
 {
     /**
      * @param MAX_LENGTH maximum number of string characters, or 0 for dynamic allocation.
-     * @param Alloc      heap memory allocator class.
      */
     template <int32 MAX_LENGTH> 
     class StringTest : public ::Object< ::Allocator >
@@ -537,15 +536,18 @@ namespace unit
  */   
 int32 Main::main()
 {
-    ::unit::StringTest<0> stringTest;
-    if( not stringTest.isConstructed() )
+    // Test the char type partial specialization of the static string class.
+    ::unit::StringTest<100> staticStringTest;
+    if( not staticStringTest.execute() )
     {
         return -1;
-    }
-    if( not stringTest.execute() )
+    } 
+    // Test the char type partial specialization of the dynamic string class.
+    ::unit::StringTest<0> dynamicStringTest;
+    if( not dynamicStringTest.execute() )
     {
         return -1;
-    }    
+    }       
     return 0; 
 }
 
