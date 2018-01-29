@@ -29,11 +29,11 @@ Source="..\..\..\..\eoos-modules\source\module.Allocator.cpp"
 Source="..\..\..\..\eoos-system\source\system.Allocator.cpp"
 Source="..\..\..\..\eoos-system\source\system.Main.cpp"
 Source="..\..\..\..\eoos-system\source\system.System.cpp"
+Source="..\..\..\source\Main.string.cpp"
 Source="..\source\Allocator.cpp"
 Source="..\source\Board.cpp"
 Source="..\source\Configuration.cpp"
 Source="..\source\libraries\rts64plus.v6.0.11.lib"
-Source="..\source\Main.cpp"
 Source="Debug\eoos.tms320c64xplus.debug.map"
 Source="..\source\memory\memory.tms320c64xplus.coff.cmd"
 
@@ -48,9 +48,6 @@ Options=-c -h -m".\Debug\eoos.tms320c64xplus.debug.map" -o".\Debug\eoos.tms320c6
 
 ["Linker" Settings: "Release"]
 Options=-a -c -m".\Release\eoos.tms320c64xplus.map" -o".\Release\eoos.tms320c64xplus.out" -w -x
-
-["..\source\Main.cpp" Settings: "Release"]
-Options="Compiler" -{-o3}
 
 ["Debug\eoos.tms320c64xplus.debug.map" Settings: "Debug"]
 ExcludeFromBuild=true
