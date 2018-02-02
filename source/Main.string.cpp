@@ -529,6 +529,18 @@ namespace unit
     };
 }
 
+bool isLess(int32 v)
+{
+    if(v < 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;    
+    }
+}
+
 /**
  * User method which will be stated as first.
  *
@@ -536,6 +548,12 @@ namespace unit
  */   
 int32 Main::main()
 {
+    int64 v = 0x8000000000000001;
+    if( not isLess(v) )
+    {
+        return -1;
+    }
+
     // Test the char type partial specialization of the static string class.
     ::unit::StringTest<100> staticStringTest;
     if( not staticStringTest.execute() )
