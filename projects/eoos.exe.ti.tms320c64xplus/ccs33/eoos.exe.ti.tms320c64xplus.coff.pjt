@@ -30,6 +30,7 @@ Source="..\..\..\..\eoos-system\source\system.Allocator.cpp"
 Source="..\..\..\..\eoos-system\source\system.Main.cpp"
 Source="..\..\..\..\eoos-system\source\system.System.cpp"
 Source="..\..\..\source\Main.all.cpp"
+Source="..\..\..\source\Main.semaphorelock.cpp"
 Source="..\source\Allocator.cpp"
 Source="..\source\Board.cpp"
 Source="..\source\Configuration.cpp"
@@ -48,6 +49,9 @@ Options=-c -h -m".\Debug\eoos.tms320c64xplus.debug.map" -o".\Debug\eoos.tms320c6
 
 ["Linker" Settings: "Release"]
 Options=-a -c -m".\Release\eoos.tms320c64xplus.map" -o".\Release\eoos.tms320c64xplus.out" -w -x
+
+["..\..\..\source\Main.all.cpp" Settings: "Debug"]
+ExcludeFromBuild=true
 
 ["Debug\eoos.tms320c64xplus.debug.map" Settings: "Debug"]
 ExcludeFromBuild=true
