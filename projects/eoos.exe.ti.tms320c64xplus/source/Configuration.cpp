@@ -15,5 +15,5 @@ Configuration::Configuration() :
     cpuClock    (1000000000),
     heapAddr    (reinterpret_cast<void*>(0x00881000)),
     heapSize    (0x0007f000),
-    stackSize   (0x00000800){
+    stackSize   (0x00002000){
 }
