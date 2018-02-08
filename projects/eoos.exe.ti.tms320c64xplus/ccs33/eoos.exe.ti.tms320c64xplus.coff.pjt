@@ -30,13 +30,12 @@ Source="..\..\..\..\eoos-system\source\system.Allocator.cpp"
 Source="..\..\..\..\eoos-system\source\system.Main.cpp"
 Source="..\..\..\..\eoos-system\source\system.System.cpp"
 Source="..\..\..\source\Main.all.cpp"
-Source="..\..\..\source\Main.semaphorelock.cpp"
 Source="..\source\Allocator.cpp"
 Source="..\source\Board.cpp"
 Source="..\source\Configuration.cpp"
 Source="..\source\libraries\rts64plus.v6.0.11.lib"
 Source="Debug\eoos.tms320c64xplus.debug.map"
-Source="..\source\memory\memory.tms320c64xplus.coff.cmd"
+Source="..\source\memory\memory.c6000.v6.0.x.cmd"
 
 ["Compiler" Settings: "Debug"]
 Options=-g -fr"$(Proj_dir)\Debug" -ff"$(Proj_dir)\Debug" -i"%GIT_REPOS_PATH%/baigudin/eoos-system/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-kernel/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-modules/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-library/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-api/include" -d"NO_STRICT_MISRA_RULES" -mv6400+ --mem_model:data=far
@@ -50,18 +49,15 @@ Options=-c -h -m".\Debug\eoos.tms320c64xplus.debug.map" -o".\Debug\eoos.tms320c6
 ["Linker" Settings: "Release"]
 Options=-a -c -m".\Release\eoos.tms320c64xplus.map" -o".\Release\eoos.tms320c64xplus.out" -w -x
 
-["..\..\..\source\Main.all.cpp" Settings: "Debug"]
-ExcludeFromBuild=true
-
 ["Debug\eoos.tms320c64xplus.debug.map" Settings: "Debug"]
 ExcludeFromBuild=true
 
 ["Debug\eoos.tms320c64xplus.debug.map" Settings: "Release"]
 ExcludeFromBuild=true
 
-["..\source\memory\memory.tms320c64xplus.coff.cmd" Settings: "Debug"]
+["..\source\memory\memory.c6000.v6.0.x.cmd" Settings: "Debug"]
 LinkOrder=1
 
-["..\source\memory\memory.tms320c64xplus.coff.cmd" Settings: "Release"]
+["..\source\memory\memory.c6000.v6.0.x.cmd" Settings: "Release"]
 LinkOrder=1
 

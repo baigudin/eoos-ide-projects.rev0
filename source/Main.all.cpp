@@ -20,6 +20,52 @@
 #include "library.String.hpp"
 #include "library.Toggle.hpp"
 
+class A
+{
+
+public:
+
+    A() : v_ (0)
+    {
+    }
+    
+    virtual ~A()
+    {
+    }    
+    
+    virtual void set(int32 v) = 0;
+
+private:
+
+    int32 v_;    
+
+};
+
+void A::set(int32 v)
+{
+    v_ = v;
+}
+
+
+class B : public A
+{
+
+public:
+
+    B() : A()
+    {
+    }
+    
+    virtual ~B()
+    {
+    }    
+    
+    virtual void set(int32 v)
+    {
+        this->A::set(v);
+    }
+
+};
 
 /**
  * User method which will be stated as first.
@@ -28,14 +74,8 @@
  */   
 int32 Main::main()
 {  
-    int a = 7;
-    for(int i=0; i<5; i++)
-    {
-        const int I = i + a;
-        if(I > 8)
-        {
-            break;
-        }
-    }
+    B  b;
+    A& a = b;    
+    a.set(6);
     return 0;
 }
