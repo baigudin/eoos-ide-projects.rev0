@@ -14,27 +14,16 @@ Config="Release"
 [Source Files]
 Source="..\..\..\..\eoos-kernel\source\kernel.Allocator.cpp"
 Source="..\..\..\..\eoos-kernel\source\kernel.Kernel.cpp"
-Source="..\..\..\..\eoos-kernel\source\kernel.Main.cpp"
-Source="..\..\..\..\eoos-kernel\source\kernel.Scheduler.cpp"
+Source="..\..\..\..\eoos-kernel\source\kernel.Object.cpp"
 Source="..\..\..\..\eoos-modules\source\cpu\ti\tms320c64xplus\module.Boot.cpp"
 Source="..\..\..\..\eoos-modules\source\cpu\ti\tms320c64xplus\module.Boot.ll.asm"
-Source="..\..\..\..\eoos-modules\source\cpu\ti\tms320c64xplus\module.Interrupt.cpp"
-Source="..\..\..\..\eoos-modules\source\cpu\ti\tms320c64xplus\module.Interrupt.ll.asm"
-Source="..\..\..\..\eoos-modules\source\cpu\ti\tms320c64xplus\module.InterruptController.cpp"
-Source="..\..\..\..\eoos-modules\source\cpu\ti\tms320c64xplus\module.Pll.cpp"
-Source="..\..\..\..\eoos-modules\source\cpu\ti\tms320c64xplus\module.Processor.cpp"
-Source="..\..\..\..\eoos-modules\source\cpu\ti\tms320c64xplus\module.Registers.cpp"
-Source="..\..\..\..\eoos-modules\source\cpu\ti\tms320c64xplus\module.Timer.cpp"
-Source="..\..\..\..\eoos-modules\source\module.Allocator.cpp"
 Source="..\..\..\..\eoos-system\source\system.Allocator.cpp"
-Source="..\..\..\..\eoos-system\source\system.Main.cpp"
+Source="..\..\..\..\eoos-system\source\system.Object.cpp"
 Source="..\..\..\..\eoos-system\source\system.System.cpp"
-Source="..\..\..\source\Main.all.cpp"
-Source="..\source\Allocator.cpp"
-Source="..\source\Board.cpp"
 Source="..\source\Configuration.cpp"
 Source="..\source\libraries\rts64plus.v6.0.11.lib"
 Source="Debug\eoos.tms320c64xplus.debug.map"
+Source="Release\eoos.tms320c64xplus.map"
 Source="..\source\memory\memory.c6000.v6.0.x.cmd"
 
 ["Compiler" Settings: "Debug"]
@@ -53,6 +42,12 @@ Options=-a -c -m".\Release\eoos.tms320c64xplus.map" -o".\Release\eoos.tms320c64x
 ExcludeFromBuild=true
 
 ["Debug\eoos.tms320c64xplus.debug.map" Settings: "Release"]
+ExcludeFromBuild=true
+
+["Release\eoos.tms320c64xplus.map" Settings: "Debug"]
+ExcludeFromBuild=true
+
+["Release\eoos.tms320c64xplus.map" Settings: "Release"]
 ExcludeFromBuild=true
 
 ["..\source\memory\memory.c6000.v6.0.x.cmd" Settings: "Debug"]
