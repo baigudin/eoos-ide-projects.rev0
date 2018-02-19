@@ -4,8 +4,8 @@
  * @author    Sergey Baigudin, sergey@baigudin.software
  * @copyright 2018, Sergey Baigudin
  */
-#include "global.Allocator.hpp"
-#include "global.System.hpp"
+#include "Allocator.hpp"
+#include "System.hpp"
 
 namespace global
 {
@@ -13,7 +13,7 @@ namespace global
     /**
      * Pointer to constructed the operating systenm heap memory.
      */
-    static ::api::Heap* heap_ = ::api::Constant::NULL;
+    static api::Heap* heap_ = api::Constant::NULL;
     
     /**
      * Allocates memory.

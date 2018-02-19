@@ -21,7 +21,7 @@ namespace user
         
     public:
     
-        explicit Object(const T v) : v_(v)
+        Object(const T v) : v_(v)
         {
         }
         

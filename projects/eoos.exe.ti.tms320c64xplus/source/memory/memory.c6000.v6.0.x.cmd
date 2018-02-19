@@ -9,7 +9,7 @@
  * @license   http://embedded.team/license/
  */
 -heap  0x1000
--stack 0x100
+-stack 0x1000
 
 MEMORY
 {

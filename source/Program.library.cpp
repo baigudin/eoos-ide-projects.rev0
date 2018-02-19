@@ -5,7 +5,7 @@
  * @copyright 2017-2018, Embedded Team, Sergey Baigudin
  * @license   http://embedded.team/license/
  */
-#include "global.Program.hpp"
+#include "Program.hpp"
 #include "library.Align.hpp"
 
 namespace global

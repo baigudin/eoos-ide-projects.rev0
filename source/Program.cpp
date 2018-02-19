@@ -5,7 +5,7 @@
  * @copyright 2014-2018, Embedded Team, Sergey Baigudin
  * @license   http://embedded.team/license/
  */
-#include "global.Program.hpp"
+#include "Program.hpp"
 
 namespace global
 {

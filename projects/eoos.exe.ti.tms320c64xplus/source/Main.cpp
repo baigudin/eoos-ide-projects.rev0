@@ -5,7 +5,7 @@
  * @copyright 2014-2017, Embedded Team, Sergey Baigudin
  * @license   http://embedded.team/license/
  */
-#include "Main.hpp"
+//#include "Main.hpp"
 #include "MisraTest.hpp"
 
 

@@ -5,7 +5,7 @@
  * @copyright 2016-2018, Embedded Team, Sergey Baigudin
  * @license   http://embedded.team/license/
  */
-#include "global.Configuration.hpp"
+#include "Configuration.hpp"
 
 namespace global
 {
