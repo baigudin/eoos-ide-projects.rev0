@@ -1,16 +1,16 @@
 /** 
- * User main class.
+ * Entry point to an operating system main program.
  * 
  * @author    Sergey Baigudin, sergey@baigudin.software
- * @copyright 2017, Embedded Team, Sergey Baigudin
+ * @copyright 2017-2018, Embedded Team, Sergey Baigudin
  * @license   http://embedded.team/license/
  */
-#include "Main.hpp"
+#include "Program.hpp"
 #include "Semaphore.hpp"
 #include "system.System.hpp"
 
 /**
- * The user application entry method.
+ * Starts executing an operating system main program.
  *
  * The test results:
  *
@@ -54,9 +54,9 @@
  * 7_833_976_200 ns : unfair *old 
  * 8_511_705_080 ns : fair   *old
  *
- * @return error code or zero.
+ * @return zero, or error code if an error has been occurred.
  */   
-int32 Main::main()
+int32 Program::start()
 {
     ::api::System& system = ::system::System::call();
     // Create and check a semaphore

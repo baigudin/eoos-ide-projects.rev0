@@ -1,26 +1,26 @@
 /** 
- * User main class.
+ * Entry point to an operating system main program.
  * 
  * @author    Sergey Baigudin, sergey@baigudin.software
  * @copyright 2014-2018, Embedded Team, Sergey Baigudin
  * @license   http://embedded.team/license/
  */
-#include "Main.hpp"
+#include "Program.hpp"
 #include "library.String.hpp"
 
 namespace unit
 {
     /**
-     * @param MAX_LENGTH maximum number of string characters, or 0 for dynamic allocation.
+     * @param L maximum number of string characters, or 0 for dynamic allocation.
      */
-    template <int32 MAX_LENGTH> 
+    template <int32 L> 
     class StringTest : public ::Object< ::Allocator >
     {
-        typedef char                                      Type;
-        typedef ::Allocator                               Alloc;
-        typedef ::Object<Alloc>                           Parent; 
-        typedef ::library::String<Type,MAX_LENGTH,Alloc>  String; 
-        typedef ::api::String<Type>                       IString;         
+        typedef char                             Type;
+        typedef ::Allocator                      Alloc;
+        typedef ::Object<Alloc>                  Parent; 
+        typedef ::library::String<Type,L,Alloc>  String; 
+        typedef ::api::String<Type>              IString;         
 
     public:
     
@@ -39,6 +39,16 @@ namespace unit
         virtual ~StringTest()
         {
         }
+        
+        /**
+         * Tests if this object has been constructed.
+         *
+         * @return true if object has been constructed successfully.
+         */    
+        bool isConstructed() const
+        {
+            return Parent::getConstruct();
+        }        
         
         /**
          * Executes tests.
@@ -116,15 +126,7 @@ namespace unit
             if( not s4.isConstructed() )
             {
                 return false;
-            }             
-            
-            // Test that the CONSTRUCTOR with A SOURCE INT64 NUMBER argument is avaliable            
-            int64 i64 = 0x1234123412341234;            
-            String s5( i64 );
-            if( not s5.isConstructed() )
-            {
-                return false;
-            }             
+            }
             
             return true;
         }  
@@ -395,11 +397,12 @@ namespace unit
             if( not castNumberByConstructor<int32,Type*>(-2147483647, "-2147483647") )
             {
                 return false;
-            } 
-            if( not castNumberByConstructor<int64,Type*>(-9223372036854775807, "-9223372036854775807") )
-            {
-                return false;
-            }             
+            }
+            // NOTE: The int64 type is excluded from the string class
+            //if( not castNumberByConstructor<int64,Type*>(-9223372036854775807, "-9223372036854775807") )
+            //{
+            //    return false;
+            //}             
             // Test min available int32 value
             if( not castNumber<int32>(-2147483647) )
             {
@@ -415,22 +418,22 @@ namespace unit
             {
                 return false;
             }
+            // NOTE: The int64 type is excluded from the string class                        
             // Test min available int64 value
-            if( not castNumber<int64>(-9223372036854775807) )
-            {
-                return false;
-            }
+            //if( not castNumber<int64>(-9223372036854775807) )
+            //{
+            //    return false;
+            //}
             // Test min unavailable int64 value
-            if( castNumber<int64>(-9223372036854775808) )
-            {
-                return false;
-            } 
-            // Test uint64 value            
-            if( not castNumber<uint64>(0xffffffffffffffff) )
-            {
-                return false;
-            }                       
-
+            //if( castNumber<int64>(-9223372036854775808) )
+            //{
+            //    return false;
+            //} 
+            // Test uint64 value
+            //if( not castNumber<uint64>(0xffffffffffffffff) )
+            //{
+            //    return false;
+            //}
             return true;     
         }
         
@@ -529,31 +532,13 @@ namespace unit
     };
 }
 
-bool isLess(int32 v)
-{
-    if(v < 0)
-    {
-        return true;
-    }
-    else
-    {
-        return false;    
-    }
-}
-
 /**
- * User method which will be stated as first.
+ * Starts executing an operating system main program.
  *
- * @return error code or zero.
- */   
-int32 Main::main()
+ * @return zero, or error code if an error has been occurred.
+ */
+int32 Program::start()
 {
-    int64 v = 0x8000000000000001;
-    if( not isLess(v) )
-    {
-        return -1;
-    }
-
     // Test the char type partial specialization of the static string class.
     ::unit::StringTest<100> staticStringTest;
     if( not staticStringTest.execute() )

@@ -1,11 +1,11 @@
 /** 
- * User main class.
+ * Entry point to an operating system main program.
  * 
  * @author    Sergey Baigudin, sergey@baigudin.software
- * @copyright 2017, Embedded Team, Sergey Baigudin
+ * @copyright 2017-2018, Embedded Team, Sergey Baigudin
  * @license   http://embedded.team/license/
  */
-#include "Main.hpp"
+#include "Program.hpp"
 #include "Thread.hpp"
 #include "Mutex.hpp"
 #include "Semaphore.hpp"
@@ -41,9 +41,11 @@ public:
     }
     
     /**
-     * The main method of this thread.
+     * Starts executing an operating system prorgam in itsself context.
+     *
+     * @return zero, or error code if an error has been occurred.         
      */  
-    void main()
+    virtual int32 start()
     {
         volatile bool exe = true;
         while(exe) 
@@ -52,6 +54,7 @@ public:
             Thread::sleep(time_);
             sem_.release(permits_);
         }
+        return 0;
     }
     
     /**
@@ -77,11 +80,11 @@ public:
 };
 
 /**
- * User method which will be stated as first.
+ * Starts executing an operating system main program.
  *
- * @return error code or zero.
+ * @return zero, or error code if an error has been occurred.
  */   
-int32 Main::main()
+int32 Program::start()
 {
     // Create and check one semaphore of all threads
     Semaphore sem(2, true);

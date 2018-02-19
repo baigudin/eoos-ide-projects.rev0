@@ -1,11 +1,11 @@
 /** 
- * User main class.
+ * Entry point to an operating system main program.
  * 
  * @author    Sergey Baigudin, sergey@baigudin.software
- * @copyright 2017, Embedded Team, Sergey Baigudin
+ * @copyright 2017-2018, Embedded Team, Sergey Baigudin
  * @license   http://embedded.team/license/
  */
-#include "Main.hpp"
+#include "Program.hpp"
 #include "Allocator.hpp"
 #include "Interrupt.hpp"
 #include "Mutex.hpp"
@@ -68,11 +68,11 @@ public:
 };
 
 /**
- * User method which will be stated as first.
+ * Starts executing an operating system main program.
  *
- * @return error code or zero.
+ * @return zero, or error code if an error has been occurred.
  */   
-int32 Main::main()
+int32 Program::start()
 {  
     B  b;
     A& a = b;    
