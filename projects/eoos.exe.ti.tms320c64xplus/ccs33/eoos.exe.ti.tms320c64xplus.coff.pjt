@@ -23,6 +23,7 @@ Source="..\..\..\..\eoos-kernel\source\kernel.Object.cpp"
 Source="..\..\..\..\eoos-system\source\system.Allocator.cpp"
 Source="..\..\..\..\eoos-system\source\system.Object.cpp"
 Source="..\..\..\..\eoos-system\source\system.System.cpp"
+Source="..\..\..\source\Program.all.cpp"
 Source="..\..\..\source\Program.cpp"
 Source="..\..\..\source\Program.library.cpp"
 Source="..\source\Allocator.cpp"
@@ -33,10 +34,10 @@ Source="Release\eoos.tms320c64xplus.map"
 Source="..\source\memory\memory.c6000.v6.0.x.cmd"
 
 ["Compiler" Settings: "Debug"]
-Options=-g -fr"$(Proj_dir)\Debug" -ff"$(Proj_dir)\Debug" -i"%GIT_REPOS_PATH%/baigudin/eoos-system/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-kernel/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-cpu-ti-tms320c64xplus/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-library/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-api/include" -d"NO_STRICT_MISRA_RULES" -mv6400+ --mem_model:data=far
+Options=-g -fr"$(Proj_dir)\Debug" -ff"$(Proj_dir)\Debug" -i"%GIT_PATH%/baigudin/eoos-system/include" -i"%GIT_PATH%/baigudin/eoos-kernel/include" -i"%GIT_PATH%/baigudin/eoos-cpu-ti-tms320c64xplus/include" -i"%GIT_PATH%/baigudin/eoos-library/include" -i"%GIT_PATH%/baigudin/eoos-api/include" -d"NO_STRICT_MISRA_RULES" -mv6400+ --mem_model:data=far
 
 ["Compiler" Settings: "Release"]
-Options=-g -o3 -fr"$(Proj_dir)\Release" -ff"$(Proj_dir)\Release" -i"%GIT_REPOS_PATH%/baigudin/eoos-system/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-kernel/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-modules/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-library/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-api/include" -mv6400+ --mem_model:data=far
+Options=-g -o3 -fr"$(Proj_dir)\Release" -ff"$(Proj_dir)\Release" -i"%GIT_PATH%/baigudin/eoos-system/include" -i"%GIT_PATH%/baigudin/eoos-kernel/include" -i"%GIT_PATH%/baigudin/eoos-modules/include" -i"%GIT_PATH%/baigudin/eoos-library/include" -i"%GIT_PATH%/baigudin/eoos-api/include" -mv6400+ --mem_model:data=far
 
 ["Linker" Settings: "Debug"]
 Options=-c -h -m".\Debug\eoos.tms320c64xplus.debug.map" -o".\Debug\eoos.tms320c64xplus.debug.out" -s -w -x
@@ -45,6 +46,9 @@ Options=-c -h -m".\Debug\eoos.tms320c64xplus.debug.map" -o".\Debug\eoos.tms320c6
 Options=-a -c -m".\Release\eoos.tms320c64xplus.map" -o".\Release\eoos.tms320c64xplus.out" -w -x
 
 ["..\..\..\source\Program.cpp" Settings: "Debug"]
+ExcludeFromBuild=true
+
+["..\..\..\source\Program.library.cpp" Settings: "Debug"]
 ExcludeFromBuild=true
 
 ["Debug\eoos.tms320c64xplus.debug.map" Settings: "Debug"]
