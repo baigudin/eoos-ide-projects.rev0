@@ -48,13 +48,13 @@ namespace global
      * Tests the Buffer class interface.
      */
     template<typename T>
-    T testIllegalValue(api::IllegalValue<T>& obj, const T& val)
+    T testIllegalValue(api::IllegalValue<T>* const obj, const T& val)
     {
-        if( obj.isIllegal(val) == true )
+        if( not obj->isIllegal(val) )
         {
-            obj.setIllegal(val);            
+            obj->setIllegal(val);            
         }
-        return obj.getIllegal();
+        return obj->getIllegal();
     }
     
     /**
@@ -72,18 +72,19 @@ namespace global
         const Buffer<T,0> bd1(7, illegal);        
         const Buffer<T,0> bd2(7, buf);
         Buffer<T,0> bd3(7, buf, illegal);        
-          /*     
-        const T ill = testIllegalValue<T>(bd3, 3);
+        
+        // Test IllegalValue
+        bool ret;
+        const T ill = testIllegalValue<T>(&bd3, 3);
         if(ill == illegal)
         {
-            return true;
+            ret = true;
         }
         else
         {
-            return false;
+            ret = false;
         }
-        */
-        return false;
+        return ret;
     }
     
 
@@ -104,21 +105,21 @@ namespace global
      */   
     int32 Program::start()
     {  
-        do
+        int32 error = 0;
+        // Test the Align interface
+        if( testAlign<uint32>(7U) == false )
         {
-            // Test the Align interface
-            if( not testAlign<uint32>(7U) )
-            {
-                break;
-            }
-            // Test the Buffer interface            
-            if( not testBuffer<int32>(-1) )
-            {
-                break;
-            }
+            error = -1;
         }
-        while(false);
-        return 0;
+        // Test the Buffer interface            
+        if(error == 0)
+        {
+            if( testBuffer<int32>(-1) == false )
+            {
+                error = -2;
+            }
+        }        
+        return error;
     }
 }
     
