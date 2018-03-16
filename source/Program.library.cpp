@@ -63,28 +63,48 @@ namespace global
     template<typename T>
     bool testBuffer(const T& illegal)
     {
+        bool result = true;        
         T buf[7];
         // Static buffer class        
         const Buffer<T,7> bs0;         
         const Buffer<T,5> bs1(illegal);
-        // Dynamic buffer class.
+        // Dynamic buffer class
         const Buffer<T,0> bd0(7);
         const Buffer<T,0> bd1(7, illegal);        
         const Buffer<T,0> bd2(7, buf);
         Buffer<T,0> bd3(7, buf, illegal);        
-        
+
+        if( not bd0.isConstructed() )
+        {
+            result = false;
+        }          
+        if( not bs0.isConstructed() )
+        {
+            result = false;
+        }
+        if( bs0.getLength() != 7 )
+        {
+            result = false;            
+        }
+        if( bs0.isEmpty() )
+        {
+            result = false;            
+        }        
+         
         // Test IllegalValue
-        bool ret;
-        const T ill = testIllegalValue<T>(&bd3, 3);
-        if(ill == illegal)
+        if( result )
         {
-            ret = true;
+            const T ill = testIllegalValue<T>(&bd3, 3);
+            if(ill == illegal)
+            {
+                result = true;
+            }
+            else
+            {
+                result = false;
+            }
         }
-        else
-        {
-            ret = false;
-        }
-        return ret;
+        return result;
     }
     
 
@@ -106,6 +126,18 @@ namespace global
     int32 Program::start()
     {  
         int32 error = 0;
+        
+        
+        for(int32 i=0; i<5; i++)
+        {
+            int32 a = 5;
+            a += i;
+            if( a == 20 )
+            {
+                break;
+            }
+        }
+        
         // Test the Align interface
         if( testAlign<uint32>(7U) == false )
         {
