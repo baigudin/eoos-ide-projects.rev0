@@ -9,7 +9,6 @@
 
 namespace global
 {
-
     /**
      * Pointer to constructed the operating systenm heap memory.
      */
