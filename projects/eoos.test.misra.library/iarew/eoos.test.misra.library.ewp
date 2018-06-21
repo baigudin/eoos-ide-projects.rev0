@@ -315,8 +315,8 @@
         </option>
         <option>
           <name>CCIncludePath2</name>
-          <state>D:\baigudin\git\baigudin\eoos-library\include</state>
-          <state>D:\baigudin\git\baigudin\eoos-api\include</state>
+          <state>D:\baigudin\git\baigudin\eoos\eoos-library\include</state>
+          <state>D:\baigudin\git\baigudin\eoos\eoos-api\include</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>

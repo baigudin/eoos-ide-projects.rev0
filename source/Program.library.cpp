@@ -64,20 +64,23 @@ namespace global
     bool testBuffer(const T& illegal)
     {
         bool result = true;        
-        T buf[7];
         // Static buffer class        
         const Buffer<T,7> bs0;         
-        const Buffer<T,5> bs1(illegal);
+        Buffer<T,5> bs1(illegal);
+        
+        #ifdef NO_STRICT_MISRA_RULES
         // Dynamic buffer class
+        T buf[7];               
         const Buffer<T,0> bd0(7);
         const Buffer<T,0> bd1(7, illegal);        
         const Buffer<T,0> bd2(7, buf);
-        Buffer<T,0> bd3(7, buf, illegal);        
-
+        const Buffer<T,0> bd3(7, buf, illegal);        
         if( not bd0.isConstructed() )
         {
             result = false;
         }          
+        #endif // NO_STRICT_MISRA_RULES
+        
         if( not bs0.isConstructed() )
         {
             result = false;
@@ -94,7 +97,7 @@ namespace global
         // Test IllegalValue
         if( result )
         {
-            const T ill = testIllegalValue<T>(&bd3, 3);
+            const T ill = testIllegalValue<T>(&bs1, 3);
             if(ill == illegal)
             {
                 result = true;
@@ -104,6 +107,11 @@ namespace global
                 result = false;
             }
         }
+                
+        const T element = bs1[2];
+                
+        bs1.fill(element);                            
+        
         return result;
     }
     
@@ -125,19 +133,7 @@ namespace global
      */   
     int32 Program::start()
     {  
-        int32 error = 0;
-        
-        
-        for(int32 i=0; i<5; i++)
-        {
-            int32 a = 5;
-            a += i;
-            if( a == 20 )
-            {
-                break;
-            }
-        }
-        
+        int32 error = 0;      
         // Test the Align interface
         if( testAlign<uint32>(7U) == false )
         {
