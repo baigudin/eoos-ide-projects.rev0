@@ -1,11 +1,11 @@
 /** 
- * User main class.
+ * Entry point to an operating system main program.
  * 
  * @author    Sergey Baigudin, sergey@baigudin.software
  * @copyright 2017, Embedded Team, Sergey Baigudin
  * @license   http://embedded.team/license/
  */
-#include "Main.hpp"
+#include "Program.hpp"
 #include "Thread.hpp"
 #include "Mutex.hpp"
 
@@ -34,9 +34,11 @@ public:
     }
     
     /**
-     * The main method of this thread.
+     * Starts executing an operating system prorgam in itsself context.
+     *
+     * @return zero, or error code if an error has been occurred.         
      */  
-    void main()
+    virtual int32 start()
     {
         volatile uint32 v = 0;  
         volatile bool exe = true;
@@ -44,6 +46,7 @@ public:
         {
             v = v + 1;
         }
+        return 0;
     }
     
     /**
@@ -66,11 +69,11 @@ public:
 };
 
 /**
- * User method which will be stated as first.
+ * Starts executing an operating system main program.
  *
- * @return error code or zero.
- */   
-int32 Main::main()
+ * @return zero, or error code if an error has been occurred.
+ */
+int32 Program::start()
 {
     // Create test threads
     TestThread thr1(1);

@@ -28,7 +28,7 @@ Options=-r -o"..\..\..\libraries\eoos.if.amoeba.ti.tms320c64x.coff.debug.lib"
 Options=-r -o"..\..\..\libraries\eoos.if.amoeba.ti.tms320c64x.coff.lib"
 
 ["Compiler" Settings: "Debug"]
-Options=-g -fr"$(Proj_dir)\Debug" -ff"$(Proj_dir)\Debug" -i"%GIT_REPOS_PATH%/baigudin/eoos-system/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-kernel-if-amoeba/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-api/include" -i"%GIT_REPOS_PATH%/baigudin/eoos-library/include" -i"%OS_PATH%\src\core\tms_c64xx" -i"%OS_PATH%\src\rts\source" -i"%OS_PATH%\src\mapi" -mv6400 --mem_model:data=far
+Options=-g -fr"$(Proj_dir)\Debug" -ff"$(Proj_dir)\Debug" -i"%GIT_PATH%/baigudin/eoos-system/include" -i"%GIT_PATH%/baigudin/eoos-kernel-if-amoeba/include" -i"%GIT_PATH%/baigudin/eoos-api/include" -i"%GIT_PATH%/baigudin/eoos-library/include" -i"%OS_PATH%\src\core\tms_c64xx" -i"%OS_PATH%\src\rts\source" -i"%OS_PATH%\src\mapi" -mv6400 --mem_model:data=far
 
 ["Compiler" Settings: "Release"]
 Options=-o3 -fr"$(Proj_dir)\Release" -ff"$(Proj_dir)\Release" -i"%OS_PATH%\src\core\tms_c64xx" -mv6400 --mem_model:data=far
