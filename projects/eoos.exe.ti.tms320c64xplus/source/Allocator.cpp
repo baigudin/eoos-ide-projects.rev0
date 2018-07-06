@@ -20,7 +20,7 @@ namespace global
      * @param size number of bytes to allocate.
      * @return allocated memory address or a null pointer.
      */    
-    void* Allocator::allocate(const size_t size)
+    void* Allocator::allocate(size_t const size)
     {
         if(heap_ == NULL)
         {

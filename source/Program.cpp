@@ -6,6 +6,7 @@
  * @license   http://embedded.team/license/
  */
 #include "Program.hpp"
+#include "library.String.hpp"
 
 namespace global
 {
@@ -16,6 +17,8 @@ namespace global
      */   
     int32 Program::start()
     {  
+        library::String<char,  0, Allocator> str1("Hello");
+        library::String<char, 10, Allocator> str2("World");        
         return 0;
     }
 }

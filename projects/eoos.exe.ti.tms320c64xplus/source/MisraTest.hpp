@@ -46,7 +46,7 @@ namespace user
     
     public:
     
-        explicit Test(const T1 v1, const T2 v2) : Parent(v2), v1_ (v1)
+        Test(const T1 v1, const T2 v2) : Parent(v2), v1_ (v1)
         {
         }
         
