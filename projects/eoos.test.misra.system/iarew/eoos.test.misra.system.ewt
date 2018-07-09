@@ -2095,7 +2095,7 @@
       <name>$PROJ_DIR$\..\..\..\..\cpu\ti\tms320c64xplus\source\cpu.Object.cpp</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\..\source\Program.cpp</name>
+      <name>$PROJ_DIR$\..\..\..\source\Program.string.cpp</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\..\system\source\system.Allocator.cpp</name>

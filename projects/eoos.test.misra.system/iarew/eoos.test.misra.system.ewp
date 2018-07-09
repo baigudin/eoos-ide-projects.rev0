@@ -128,7 +128,7 @@
         <option>
           <name>GBECoreSlave</name>
           <version>22</version>
-          <state>38</state>
+          <state>12</state>
         </option>
         <option>
           <name>OGUseCmsis</name>
@@ -145,7 +145,7 @@
         <option>
           <name>CoreVariant</name>
           <version>22</version>
-          <state>38</state>
+          <state>12</state>
         </option>
         <option>
           <name>GFPUDeviceSlave</name>
@@ -168,7 +168,7 @@
         <option>
           <name>GFPUCoreSlave2</name>
           <version>22</version>
-          <state>38</state>
+          <state>12</state>
         </option>
       </data>
     </settings>
@@ -181,7 +181,7 @@
         <debug>1</debug>
         <option>
           <name>CCDefines</name>
-          <state>NO_STRICT_MISRA_RULES</state>
+          <state></state>
         </option>
         <option>
           <name>CCPreprocFile</name>
@@ -270,7 +270,7 @@
         </option>
         <option>
           <name>CCSignedPlainChar</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>CCRequirePrototypes</name>
@@ -329,7 +329,7 @@
         </option>
         <option>
           <name>IProcessorMode2</name>
-          <state>1</state>
+          <state>0</state>
         </option>
         <option>
           <name>CCOptLevel</name>
@@ -728,7 +728,7 @@
         </option>
         <option>
           <name>IlinkIcfFile</name>
-          <state>$TOOLKIT_DIR$\CONFIG\generic_cortex.icf</state>
+          <state>$TOOLKIT_DIR$\CONFIG\generic.icf</state>
         </option>
         <option>
           <name>IlinkIcfFileSlave</name>
@@ -1936,7 +1936,7 @@
       <name>$PROJ_DIR$\..\..\..\..\cpu\ti\tms320c64xplus\source\cpu.Object.cpp</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\..\source\Program.cpp</name>
+      <name>$PROJ_DIR$\..\..\..\source\Program.string.cpp</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\..\system\source\system.Allocator.cpp</name>

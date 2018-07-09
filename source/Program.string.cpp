@@ -63,12 +63,12 @@ namespace global
                 {
                     return false;
                 }
-                
+
                 if( not testConstructors() )       
                 {
                     return false;            
                 }  
-
+                    
                 if( not testInterfaces() )       
                 {
                     return false;            
