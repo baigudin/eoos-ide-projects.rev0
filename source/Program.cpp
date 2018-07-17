@@ -17,6 +17,15 @@ namespace global
      */   
     int32 Program::start()
     {       
-        return 0;
+        library::String<char,0>* str = new library::String<char,0>("Hello world");
+        const char* const ch = str->getChar();
+        if(ch == 0)
+        {
+           return -1;
+        }
+        else
+        {
+           return 0;        
+        }
     }
 }
