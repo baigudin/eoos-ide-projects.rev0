@@ -7,7 +7,7 @@
  */
 #include "Configuration.hpp"
 
-namespace global
+namespace local
 {
     /** 
      * Constructor.

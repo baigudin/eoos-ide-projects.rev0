@@ -21,6 +21,6 @@
  */   
 int main()
 {
-    return ::global::Program::start();
+    return ::local::Program::start();
 }
 

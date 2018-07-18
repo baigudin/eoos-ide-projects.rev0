@@ -8,7 +8,7 @@
 #include "Program.hpp"
 #include "library.String.hpp"
 
-namespace global
+namespace local
 {
     /**
      * Starts executing an operating system main program.

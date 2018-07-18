@@ -10,7 +10,7 @@
 #include "library.Align.hpp"
 #include "library.Buffer.hpp"
 
-namespace global
+namespace local
 {
     using namespace library;
 

@@ -20,7 +20,7 @@
 #include "library.String.hpp"
 #include "library.Toggle.hpp"
 
-namespace global
+namespace local
 {
 
     class A
