@@ -31,7 +31,7 @@ Source="..\source\libraries\rts64plus.v6.0.11.lib"
 Source="..\source\memory\memory.v6.0.x.cmd"
 
 ["Compiler" Settings: "Debug"]
-Options=-g -fr"$(Proj_dir)\Debug" -ff"$(Proj_dir)\Debug" -i"$(Proj_dir)\..\..\..\..\api\include" -i"$(Proj_dir)\..\..\..\..\system\include" -i"$(Proj_dir)\..\..\..\..\cpu\ti\tms320c64xplus\include" -i"$(Proj_dir)\..\..\..\..\library\include" -d"NO_STRICT_MISRA_RULES" -mv6400+ --mem_model:data=far
+Options=-g -fr"$(Proj_dir)\Debug" -ff"$(Proj_dir)\Debug" -i"$(Proj_dir)\..\..\..\..\api\include" -i"$(Proj_dir)\..\..\..\..\system\include" -i"$(Proj_dir)\..\..\..\..\cpu\ti\tms320c64xplus\include" -i"$(Proj_dir)\..\..\..\..\library\include" -d"EOOS_NO_STRICT_MISRA_RULES" -mv6400+ --mem_model:data=far
 
 ["Compiler" Settings: "Release"]
 Options=-g -o3 -fr"$(Proj_dir)\Debug" -ff"$(Proj_dir)\Debug" -i"$(Proj_dir)\..\..\..\..\system\include" -i"$(Proj_dir)\..\..\..\..\kernel\include" -i"$(Proj_dir)\..\..\..\..\cpu\ti\tms320c64xplus\include" -i"$(Proj_dir)\..\..\..\..\library\include" -i"$(Proj_dir)\..\..\..\..\api\include" -mv6400+ --mem_model:data=far

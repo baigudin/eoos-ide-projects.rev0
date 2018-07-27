@@ -68,7 +68,7 @@ namespace local
         const Buffer<T,7> bs0;         
         Buffer<T,5> bs1(illegal);
         
-        #ifdef NO_STRICT_MISRA_RULES
+        #ifdef EOOS_NO_STRICT_MISRA_RULES
         // Dynamic buffer class
         T buf[7];               
         const Buffer<T,0> bd0(7);
@@ -79,7 +79,7 @@ namespace local
         {
             result = false;
         }          
-        #endif // NO_STRICT_MISRA_RULES
+        #endif // EOOS_NO_STRICT_MISRA_RULES
         
         if( not bs0.isConstructed() )
         {

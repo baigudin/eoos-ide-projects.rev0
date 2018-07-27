@@ -186,7 +186,7 @@
         <option>
           <name>CCDefines</name>
           <state>EOOS_TYPE_WIDTH_LP64</state>
-          <state>NO_STRICT_MISRA_RULES</state>
+          <state>EOOS_NO_STRICT_MISRA_RULES</state>
         </option>
         <option>
           <name>CCPreprocFile</name>

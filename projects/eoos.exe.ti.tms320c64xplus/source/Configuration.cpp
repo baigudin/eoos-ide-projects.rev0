@@ -14,10 +14,10 @@ namespace local
      */     
     Configuration::Configuration() :
         stackSize   (0x00002000),
-        #ifdef NO_STRICT_MISRA_RULES        
+        #ifdef EOOS_NO_STRICT_MISRA_RULES        
         heapAddr    (0x00881000),
         heapSize    (0x0007f000),
-        #endif // NO_STRICT_MISRA_RULES
+        #endif // EOOS_NO_STRICT_MISRA_RULES
         sourceClock (50000000),
         cpuClock    (1000000000){
     }
