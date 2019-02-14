@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?ccsproject version="1.0"?>
+<projectOptions>
+	<ccsVersion value="8.2.0"/>
+	<deviceVariant value="com.ti.ccstudio.deviceModel.TMS470.GenericCortexM3Device"/>
+	<deviceFamily value="TMS470"/>
+	<deviceEndianness value="little"/>
+	<codegenToolVersion value="GNU_7.3.1:Linaro"/>
+	<isElfFormat value="true"/>
+	<rts value="libstdc++.a"/>
+	<createSlaveProjects value=""/>
+	<templateProperties value="id=com.ti.common.project.core.emptyProjectTemplate_gnu_arm"/>
+	<filesToOpen value=""/>
+	<isTargetManual value="false"/>
+</projectOptions>

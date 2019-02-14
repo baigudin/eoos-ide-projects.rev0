@@ -17,7 +17,7 @@ Release
 .cproject
 .project
 .settings/
-*.launch
+*.launch   
 
 # Keil project files
 *.lnp
