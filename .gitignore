@@ -1,10 +1,15 @@
+# Common files
+Debug
+Debug__GNU
+Debug__TI
+
 # Compiled Object files
 *.o
 *.obj
 *.lst
 *.map
 
-# CCStudio project files
+# CCStudio 3.3 project files
 *.paf2
 *.sbl
 *.log
@@ -14,10 +19,7 @@ Debug
 Release
 
 # Eclipse project files
-.cproject
-.project
 .settings/
-*.launch   
 
 # Keil project files
 *.lnp

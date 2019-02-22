@@ -7,9 +7,9 @@
 	<deviceEndianness value="little"/>
 	<codegenToolVersion value="GNU_7.3.1:Linaro"/>
 	<isElfFormat value="true"/>
-	<rts value="libc.a"/>
+	<rts value="libstdc++.a"/>
 	<createSlaveProjects value=""/>
-	<templateProperties value="id=com.ti.common.project.core.emptyProjectWithMainTemplate_gnu_arm"/>
-	<filesToOpen value="main.c"/>
+	<templateProperties value="id=com.ti.common.project.core.emptyProjectTemplate_gnu_arm"/>
+	<filesToOpen value=""/>
 	<isTargetManual value="false"/>
 </projectOptions>
