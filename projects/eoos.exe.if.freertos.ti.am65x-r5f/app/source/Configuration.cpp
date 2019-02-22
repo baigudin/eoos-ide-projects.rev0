@@ -16,7 +16,8 @@ namespace local
         heapAddr    (0x00000000),
         heapSize    (0x00000000),
         #endif // EOOS_NO_STRICT_MISRA_RULES
-        sourceClock (24768000),
+        // 25 MHz crystal 0 clocks the SoC by using WKUP_HFOSC0
+        sourceClock (25000000),
         cpuClock    (400000000){
     }
 }
