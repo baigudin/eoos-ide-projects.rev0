@@ -2,6 +2,8 @@
  * The configuration of a target processor.
  * 
  * @author    Sergey Baigudin, sergey@baigudin.software
+ * @copyright 2019, Embedded Team, Sergey Baigudin
+ * @license   http://embedded.team/license/
  */
 #include "Configuration.hpp"
 

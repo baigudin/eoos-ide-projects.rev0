@@ -2,7 +2,7 @@
  * Entry point to an operating system main program.
  * 
  * @author    Sergey Baigudin, sergey@baigudin.software
- * @copyright 2014-2018, Embedded Team, Sergey Baigudin
+ * @copyright 2019, Embedded Team, Sergey Baigudin
  * @license   http://embedded.team/license/
  */
 #include "Program.hpp"
